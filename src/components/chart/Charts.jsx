@@ -26,9 +26,14 @@ ChartJS.register(
 export default function Charts() {
   return (
     <div style={{ width: "1000px", height: "367px" }}>
-      <Line data={data} options={options} actions={actions} config={config}>
-        <button>Alo</button>
-      </Line>
+      <Line data={data} options={options} actions={actions} config={config} />
+
+      {/* {actions.map((i) => <button onClick={i.handler}>{i.name}</button> */}
+      {actions.map((action, index) => (
+        <button key={index} onClick={action.handler}>
+          {action.name}
+        </button>
+      ))}
     </div>
   );
 }

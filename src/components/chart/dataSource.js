@@ -7,7 +7,6 @@ import {
   CHART_COLORS,
 } from "./Utils.js";
 
-
 export const DATA_COUNT = 7;
 export const NUMBER_CFG = { count: DATA_COUNT, min: -100, max: 100 };
 
@@ -68,7 +67,6 @@ export const actions = [
   {
     name: "Randomize",
     handler(chart) {
-      // console.log(chart);
       chart.data.datasets.forEach((dataset) => {
         dataset.data = numbers({
           count: chart.data.labels.length,

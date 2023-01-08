@@ -73,7 +73,7 @@ export function labels(config) {
   return values;
 }
 
-const MONTHS = [
+export const MONTHS = [
   "January",
   "February",
   "March",
@@ -103,7 +103,7 @@ export function months(config) {
   return values;
 }
 
-const COLORS = [
+export const COLORS = [
   "#4dc9f6",
   "#f67019",
   "#f53794",
@@ -134,7 +134,7 @@ export const CHART_COLORS = {
   grey: "rgb(201, 203, 207)",
 };
 
-const NAMED_COLORS = [
+export const NAMED_COLORS = [
   CHART_COLORS.red,
   CHART_COLORS.orange,
   CHART_COLORS.yellow,

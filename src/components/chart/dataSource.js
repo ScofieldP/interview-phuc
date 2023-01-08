@@ -11,7 +11,7 @@ export const DATA_COUNT = 7;
 export const NUMBER_CFG = { count: DATA_COUNT, min: -100, max: 100 };
 
 export const labels = months({ count: 7 });
-export const data = {
+export const LineChartData = {
   labels: labels,
   datasets: [
     {
@@ -30,7 +30,7 @@ export const data = {
 };
 export const config = {
   type: "line",
-  data: data,
+  data: LineChartData,
   options: {
     responsive: true,
     plugins: {
@@ -54,14 +54,7 @@ export const options = {
       },
     },
   },
-
-  // Tọa độ
-  scales: {},
 };
-
-// </block:setup>
-
-// <block:config:0>
 
 export const actions = [
   {

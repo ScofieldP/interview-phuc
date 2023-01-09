@@ -4,10 +4,9 @@ import {
   Title,
   SubTitle,
   ChartContainer,
-  ChartDetail,
-} from "../../style/style";
-import Charts from "../../components/chart/Charts";
-import Search from "../../components/search/Search";
+  ChartSection,
+} from "../../style/Chart.styled";
+import { SearchSection } from "../../style/Search.styled";
 export default function Home() {
   return (
     <Container>
@@ -17,9 +16,9 @@ export default function Home() {
         và quá khứ, bạn có thể tùy chọn thời điểm tra cứu theo khung thời gian
         bạn muốn
       </SubTitle>
-      <ChartContainer>
-        <Charts />
-      </ChartContainer>
+      <ChartContainer />
+      <SearchSection />
+      <ChartSection />
     </Container>
   );
 }

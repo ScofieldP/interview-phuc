@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import Charts from "../components/chart/Charts";
+
 import "./style.css";
 
 export const Container = styled.div`
   position: relative;
-  width: 100%;
+  width: 1440px;
   height: 804px;
 
   background: #ffffff;
@@ -15,7 +16,7 @@ export const Title = styled.p`
   width: 280px;
   height: 30px;
   left: 589px;
-  top: 77px;
+  top: 50px;
 
   font-style: normal;
   font-weight: 400;
@@ -34,7 +35,7 @@ export const SubTitle = styled.p`
   width: 819px;
   height: 48px;
   left: 311px;
-  top: 125px;
+  top: 100px;
 
   font-style: normal;
   font-weight: 400;
@@ -51,35 +52,25 @@ export const SubTitle = styled.p`
 `;
 
 export const ChartContainer = styled.div`
-  /* Rectangle 87 */
-
   box-sizing: border-box;
-
   position: absolute;
   width: 1080px;
   height: 530px;
-  left: 180px;
+  left: 200px;
   top: 203px;
-
-  /* Grey */
-
   background: #dbdfe1;
-  /* Grey */
-
   border: 1px solid #dbdfe1;
   border-radius: 4px;
 `;
 
-export const ChartDetail = styled(Charts)`
+export const ChartSection = styled(Charts)`
   box-sizing: border-box;
-
   position: absolute;
   width: 1000px;
   height: 367px;
-  left: 220px;
+  left: 240px;
   top: 331px;
-
-  background-color: #ffffff;
+  background: #ffffff;
   border-radius: 4px;
 `;
 
@@ -88,15 +79,13 @@ export const ChartButton = styled.button`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-
   transition: background 0.25s, border-color 0.25s;
   background: rgba(40, 44, 52, 0.05);
   border: 1px solid transparent;
   border-radius: 6px;
   color: #3080d0;
   text-decoration: none !important;
-  display: inline-block;import Charts from './../components/chart/Charts';
-
+  display: inline-block;
   font-size: 0.8rem;
   padding: 8px 16px;
   margin: 0 8px 8px 0;

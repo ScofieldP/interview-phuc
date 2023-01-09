@@ -46,13 +46,17 @@ export const config = {
 };
 
 export const options = {
+  responsive: true,
   plugins: {
     legend: {
       labels: {
         usePointStyle: true,
         pointStyle: "rect",
       },
+      position: "top",
     },
+
+    maintainAspectRatio: false,
   },
 };
 
@@ -69,12 +73,14 @@ export const actions = [
           max: 100,
         });
       });
+
       chart.update();
     },
   },
   {
     name: "Add Dataset",
     handler(chart) {
+      console.log(chart);
       const data = chart.data;
       const dsColor = namedColor(chart.data.datasets.length);
       const newDataset = {

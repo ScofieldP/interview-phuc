@@ -12,7 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { ChartButton } from "../../style/style";
+import { ChartButton } from "../../style/Chart.styled";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -23,7 +23,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-export default function Charts() {
+export default function Charts({ className }) {
   // console.log(data.datasets);
   // const [chart, setChart] = useState([]);
   // // console.log(datachart);
@@ -38,18 +38,24 @@ export default function Charts() {
 
   // // console.log(LineChartData.datasets.map((i) => i.data);
   // localStorage.setItem("chart", date);
-  const charts = data.datasets?.map((i) => i.data);
+  const charts = data.datasets;
+  localStorage.setItem("chart", JSON.stringify(charts));
   // console.log(charts);
-  console.log(actions);
+  // console.log(actions);
+  console.log(data.datasets);
   return (
-    <>
-      <Line data={data} options={options} />
-
-      {actions.map((action, index) => (
-        <ChartButton key={index} onClick={() => action.handler(charts)}>
-          {action.name}
-        </ChartButton>
-      ))}
-    </>
+    <div className={className}>
+      <Line data={data} options={options} width={800} height={300} />
+      <div style={{ marginTop: "50px", textAlign: "center" }}>
+        {actions.map((action, index) => (
+          <ChartButton
+            key={index}
+            onClick={() => action.handler(data?.datasets)}
+          >
+            {action.name}
+          </ChartButton>
+        ))}
+      </div>
+    </div>
   );
 }

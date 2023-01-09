@@ -11,7 +11,7 @@ export const DATA_COUNT = 7;
 export const NUMBER_CFG = { count: DATA_COUNT, min: -100, max: 100 };
 
 export const labels = months({ count: 7 });
-export const LineChartData = {
+export const data = {
   labels: labels,
   datasets: [
     {
@@ -30,7 +30,7 @@ export const LineChartData = {
 };
 export const config = {
   type: "line",
-  data: LineChartData,
+  data: data,
   options: {
     responsive: true,
     plugins: {
@@ -60,7 +60,9 @@ export const actions = [
   {
     name: "Randomize",
     handler(chart) {
-      chart.data.datasets.forEach((dataset) => {
+      console.log(chart);
+      const chartRandom = chart.data.datasets;
+      chartRandom.forEach((dataset) => {
         dataset.data = numbers({
           count: chart.data.labels.length,
           min: -100,

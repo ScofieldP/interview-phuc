@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import { LineChartData, options, actions, config } from "./dataSource";
+import { data, options, actions, config } from "./DataSource";
 import {
   Chart as ChartJS,
   CategoryScale, // tọa độ x
@@ -12,7 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
+import { ChartButton } from "../../style/style";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -24,29 +24,32 @@ ChartJS.register(
   Legend
 );
 export default function Charts() {
-  const datachart = LineChartData.datasets ? LineChartData.datasets : undefined;
-  console.log(datachart);
-  console.log(LineChartData);
+  // console.log(data.datasets);
+  // const [chart, setChart] = useState([]);
+  // // console.log(datachart);
+  // const date = data.datasets.map((i) => i.data);
+  // console.log(date);
+  // const chartData = () => {
+  //   const datachart = data.datasets ? data.datasets : undefined;
+
+  //   setChart(datachart);
+  // };
+  // console.log(chart);
+
+  // // console.log(LineChartData.datasets.map((i) => i.data);
+  // localStorage.setItem("chart", date);
+  const charts = data.datasets?.map((i) => i.data);
+  // console.log(charts);
+  console.log(actions);
   return (
-    <div style={{ width: "1000px", height: "367px" }}>
-      <Line
-        data={LineChartData}
-        options={options}
-        actions={actions}
-        config={config}
-      />
-      {LineChartData.datasets
-        ? actions.map((action, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                action.handler(LineChartData.datasets);
-              }}
-            >
-              {action.name}
-            </button>
-          ))
-        : ""}
-    </div>
+    <>
+      <Line data={data} options={options} />
+
+      {actions.map((action, index) => (
+        <ChartButton key={index} onClick={() => action.handler(charts)}>
+          {action.name}
+        </ChartButton>
+      ))}
+    </>
   );
 }

@@ -50,19 +50,7 @@ export const actions = [
     name: "Randomize",
 
     handler(chart) {
-      console.log(chart.datasets);
-      // const newDataset = {
-      //   label: "Dataset " + (data.datasets.length + 1),
-      //   data: [1, 2, 3, 4, 5, 6],
-      //   backgroundColor: "red",
-      //   borderColor: "red",
-      // };
-      // data.datasets.push(newDataset);
-      // localStorage.setItem("chart", JSON.stringify(newDataset));
-      // console.log(newDataset);
-      // console.log(chart);
-      // console.log(chart);
-      // const random = data.datasets;
+      console.log(chart);
       chart.datasets.forEach((dataset) => {
         dataset.data = numbers({
           count: chart.labels.length,
@@ -70,7 +58,7 @@ export const actions = [
           max: 100,
         });
       });
-      // chart.update();
+      chart.update();
     },
   },
   {
@@ -86,7 +74,7 @@ export const actions = [
         data: numbers({ count: chart.labels.length, min: -100, max: 100 }),
       };
       chart.datasets.push(newDataset);
-      // .update();
+      // chart.update();
       console.log(newDataset);
     },
   },

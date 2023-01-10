@@ -74,7 +74,7 @@ export const ChartSection = styled(Charts)`
   border-radius: 4px;
 `;
 
-export const ChartButton = styled.button`
+export const ChartButton = styled.a`
   margin: 16px 0;
   align-items: center;
   display: flex;

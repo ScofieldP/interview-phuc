@@ -28,25 +28,10 @@ export const data = {
     },
   ],
 };
-export const config = {
-  type: "line",
-  data: data,
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "Chart.js Line Chart",
-      },
-    },
-  },
-};
 
 export const options = {
   responsive: true,
+  data: data,
   plugins: {
     legend: {
       labels: {
@@ -63,71 +48,80 @@ export const options = {
 export const actions = [
   {
     name: "Randomize",
+
     handler(chart) {
-      console.log(chart);
-      const chartRandom = chart.data.datasets;
-      chartRandom.forEach((dataset) => {
+      console.log(chart.datasets);
+      // const newDataset = {
+      //   label: "Dataset " + (data.datasets.length + 1),
+      //   data: [1, 2, 3, 4, 5, 6],
+      //   backgroundColor: "red",
+      //   borderColor: "red",
+      // };
+      // data.datasets.push(newDataset);
+      // localStorage.setItem("chart", JSON.stringify(newDataset));
+      // console.log(newDataset);
+      // console.log(chart);
+      // console.log(chart);
+      // const random = data.datasets;
+      chart.datasets.forEach((dataset) => {
         dataset.data = numbers({
-          count: chart.data.labels.length,
+          count: chart.labels.length,
           min: -100,
           max: 100,
         });
       });
-
-      chart.update();
+      // chart.update();
     },
   },
   {
     name: "Add Dataset",
     handler(chart) {
-      console.log(chart);
-      const data = chart.data;
-      const dsColor = namedColor(chart.data.datasets.length);
+      // console.log();
+      // const data = data;
+      const dsColor = namedColor(chart.datasets.length);
       const newDataset = {
         label: "Dataset " + (data.datasets.length + 1),
         backgroundColor: transparentize(dsColor, 0.5),
         borderColor: dsColor,
-        data: numbers({ count: data.labels.length, min: -100, max: 100 }),
+        data: numbers({ count: chart.labels.length, min: -100, max: 100 }),
       };
-      chart.data.datasets.push(newDataset);
-      chart.update();
+      chart.datasets.push(newDataset);
+      // .update();
+      console.log(newDataset);
     },
   },
   {
     name: "Add Data",
     handler(chart) {
-      const data = chart.data;
-      if (data.datasets.length > 0) {
-        data.labels = months({ count: data.labels.length + 1 });
+      // const data = chart.data;
+      if (chart.datasets.length > 0) {
+        chart.labels = months({ count: chart.labels.length + 1 });
 
         for (let index = 0; index < data.datasets.length; ++index) {
-          data.datasets[index].data.push(rand(-100, 100));
+          chart.datasets[index].data.push(rand(-100, 100));
         }
 
-        chart.update();
+        // chart.update();
       }
     },
   },
   {
     name: "Remove Dataset",
     handler(chart) {
-      chart.data.datasets.pop();
-      chart.update();
+      chart.datasets.pop();
+      // chart.update();
     },
   },
   {
     name: "Remove Data",
     handler(chart) {
-      chart.data.labels.splice(-1, 1); // remove the label first
+      chart.labels.splice(-1, 1); // remove the label first
 
-      chart.data.datasets.forEach((dataset) => {
+      chart.datasets.forEach((dataset) => {
         dataset.data.pop();
       });
 
-      chart.update();
+      // chart.update();
     },
   },
 ];
-// </block:actions>
-
-// <block:setup:1>

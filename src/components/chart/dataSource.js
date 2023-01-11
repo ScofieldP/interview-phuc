@@ -15,13 +15,13 @@ export const data = {
   labels: labels,
   datasets: [
     {
-      label: "Dataset 1",
+      label: "Quỹ 1",
       data: numbers(NUMBER_CFG),
       borderColor: CHART_COLORS.red,
       backgroundColor: transparentize(CHART_COLORS.red, 0.5),
     },
     {
-      label: "Dataset 2",
+      label: "Quỹ 2",
       data: numbers(NUMBER_CFG),
       borderColor: CHART_COLORS.blue,
       backgroundColor: transparentize(CHART_COLORS.blue, 0.5),
@@ -39,6 +39,7 @@ export const options = {
         pointStyle: "rect",
       },
       position: "top",
+      align: "end",
     },
 
     maintainAspectRatio: false,
@@ -58,13 +59,14 @@ export const actions = [
           max: 100,
         });
       });
-      chart.update();
+      let lineChart = this.chartRef;
+      lineChart.update();
     },
   },
   {
     name: "Add Dataset",
     handler(chart) {
-      // console.log();
+      console.log(chart);
       // const data = data;
       const dsColor = namedColor(chart.datasets.length);
       const newDataset = {
@@ -81,6 +83,7 @@ export const actions = [
   {
     name: "Add Data",
     handler(chart) {
+      console.log(chart);
       // const data = chart.data;
       if (chart.datasets.length > 0) {
         chart.labels = months({ count: chart.labels.length + 1 });
@@ -96,6 +99,8 @@ export const actions = [
   {
     name: "Remove Dataset",
     handler(chart) {
+      console.log(chart);
+
       chart.datasets.pop();
       // chart.update();
     },
@@ -103,6 +108,8 @@ export const actions = [
   {
     name: "Remove Data",
     handler(chart) {
+      console.log(chart);
+
       chart.labels.splice(-1, 1); // remove the label first
 
       chart.datasets.forEach((dataset) => {

@@ -18,6 +18,8 @@ export function rand(min, max) {
 }
 
 export function numbers(config) {
+  // console.log(config);
+
   var cfg = config || {};
   var min = valueOrDefault(cfg.min, 0);
   var max = valueOrDefault(cfg.max, 100);

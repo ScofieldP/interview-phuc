@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Search from "../components/search/Search";
+import { mobile } from "./responsive";
 import "./style.css";
 
 export const SearchSection = styled(Search)`
@@ -28,11 +29,28 @@ export const Select = styled.select`
   height: 44px;
   top: 12px;
   left: 24px;
+  color: var(--orange-fs);
+  font-weight: bold;
+
+  ${mobile({
+    boxSizing: "border-box",
+
+    position: "absolute",
+    width: "335px",
+    height: "44px",
+    left: "20px",
+    top: "204px",
+
+    background: "#FFFFFF",
+    border: "1px solid #DBDFE1",
+    borderRadius: "4px",
+  })}
 `;
 
 export const Input = styled.input`
   box-sizing: border-box;
-
+  color: var(--orange-fs);
+  font-weight: bold;
   position: absolute;
   width: 275px;
   height: 44px;
@@ -46,4 +64,9 @@ export const Button = styled.button`
   height: 44px;
   left: 803px;
   top: 12px;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+
+  background: var(--orange-fs);
 `;

@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import { data, options, actions } from "./DataSource";
+import { data, options } from "../../config/source";
 import {
   Chart as ChartJS,
   CategoryScale, // tọa độ x
@@ -12,8 +12,14 @@ import {
   Tooltip,
   Legend,
 } from "chart.js/auto";
-import { ChartButton } from "../../style/Chart.styled";
-import { numbers, namedColor, transparentize, months, rand } from "./Utils.js";
+import { ChartButton, ButtonContainer } from "../../style/Chart.styled";
+import {
+  numbers,
+  namedColor,
+  transparentize,
+  months,
+  rand,
+} from "../../config/utils.js";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -74,33 +80,23 @@ export default function Charts({ className }) {
     setState({ ...state, datasets: [...state.datasets] });
   };
   return (
-    <div className={className}>
-      <Line
-        data={state}
-        options={options}
-        width={800}
-        height={300}
-        redraw={true}
-      />
-      {/* <div style={{ marginTop: "50px", textAlign: "center" }}>
-        {actions.map((action, index) => (
-          <ChartButton
-            key={index}
-            onClick={() => {
-              // setState(!state);
-              setState(!state);
-              action.handler(data);
-            }}
-          >
-            {action.name}
-          </ChartButton>
-        ))}
-      </div> */}
-      <ChartButton onClick={random}>Randomize</ChartButton>
-      <ChartButton onClick={addDataset}>Add Dataset</ChartButton>
-      <ChartButton onClick={addData}>Add Data</ChartButton>
-      <ChartButton onClick={removeDataset}>Remove Dataset</ChartButton>
-      <ChartButton onClick={removeData}>Remove Data</ChartButton>
-    </div>
+    <>
+      <div className={className}>
+        <Line
+          data={state}
+          options={options}
+          width={800}
+          height={300}
+          redraw={true}
+        />
+        <ButtonContainer>
+          <ChartButton onClick={random}>Randomize</ChartButton>
+          <ChartButton onClick={addDataset}>Add Dataset</ChartButton>
+          <ChartButton onClick={addData}>Add Data</ChartButton>
+          <ChartButton onClick={removeDataset}>Remove Dataset</ChartButton>
+          <ChartButton onClick={removeData}>Remove Data</ChartButton>
+        </ButtonContainer>
+      </div>
+    </>
   );
 }

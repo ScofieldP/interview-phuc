@@ -1,14 +1,20 @@
 import styled from "styled-components";
 import Charts from "../components/chart/Charts";
-
+import { mobile } from "./responsive";
 import "./style.css";
 
 export const Container = styled.div`
   position: relative;
   width: 1440px;
   height: 804px;
-
   background: #ffffff;
+  ${mobile({
+    /* Mobile ver */
+
+    position: "relative",
+    height: "823px",
+    background: "white",
+  })}
 `;
 
 export const Title = styled.p`
@@ -17,18 +23,35 @@ export const Title = styled.p`
   height: 30px;
   left: 589px;
   top: 50px;
-
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
   line-height: 30px;
-
   display: flex;
   align-items: center;
   text-align: center;
   text-transform: uppercase;
-
   color: var(--orange-fs);
+
+  ${mobile({
+    position: "absolute",
+    width: "202px",
+    height: "28px",
+    left: "90px",
+    top: "63px",
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: "20px",
+    lineHeight: "28px",
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
+    textTransform: "uppercase",
+
+    /* Orange */
+
+    color: "var(--orange-fs)",
+  })}
 `;
 export const SubTitle = styled.p`
   position: absolute;
@@ -46,9 +69,27 @@ export const SubTitle = styled.p`
   align-items: center;
   text-align: center;
 
-  /* Dark Green */
-
   color: #0a3b32;
+
+  ${mobile({
+    position: "absolute",
+    width: "335px",
+    height: "74px",
+    left: "20px",
+    top: "106px",
+
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: "16px",
+    lineHeight: "24px",
+    /* or 150% */
+
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
+
+    color: "#0A3B32",
+  })}
 `;
 
 export const ChartContainer = styled.div`
@@ -61,6 +102,10 @@ export const ChartContainer = styled.div`
   background: #dbdfe1;
   border: 1px solid #dbdfe1;
   border-radius: 4px;
+
+  ${mobile({
+    background: "none",
+  })}
 `;
 
 export const ChartSection = styled(Charts)`
@@ -106,4 +151,9 @@ export const ChartButton = styled.a`
     border-color: rgba(48, 128, 208, 0.4);
     color: #3080d0;
   }
+`;
+
+export const ButtonContainer = styled.div`
+  margin-top: 50px;
+  text-align: center;
 `;

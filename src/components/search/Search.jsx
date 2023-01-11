@@ -1,5 +1,5 @@
 import React from "react";
-import { data } from "../chart/DataSource";
+import { data } from "../../config/source";
 import { Select, Input, Button, FlexButton } from "../../style/Search.styled";
 export default function Search({ className }) {
   return (

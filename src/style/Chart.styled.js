@@ -12,6 +12,7 @@ export const Container = styled.div`
     /* Mobile ver */
 
     position: "relative",
+    width: "0",
     height: "823px",
     background: "white",
   })}
@@ -35,9 +36,9 @@ export const Title = styled.p`
 
   ${mobile({
     position: "absolute",
-    width: "202px",
+    width: "210px",
     height: "28px",
-    left: "90px",
+    left: "85px",
     top: "63px",
     fontStyle: "normal",
     fontWeight: "400",
@@ -74,7 +75,7 @@ export const SubTitle = styled.p`
   ${mobile({
     position: "absolute",
     width: "335px",
-    height: "74px",
+    height: "74px ",
     left: "20px",
     top: "106px",
 
@@ -82,7 +83,6 @@ export const SubTitle = styled.p`
     fontWeight: "400",
     fontSize: "16px",
     lineHeight: "24px",
-    /* or 150% */
 
     display: "flex",
     alignItems: "center",
@@ -105,6 +105,9 @@ export const ChartContainer = styled.div`
 
   ${mobile({
     background: "none",
+    border: "none",
+    width: "0",
+    height: "0",
   })}
 `;
 
@@ -117,6 +120,14 @@ export const ChartSection = styled(Charts)`
   top: 331px;
   background: #ffffff;
   border-radius: 4px;
+
+  ${mobile({
+    position: "relative",
+    top: "420px",
+    height: "2  00vh",
+    width: "100vw",
+    left: "0",
+  })}
 `;
 
 export const ChartButton = styled.a`

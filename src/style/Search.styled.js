@@ -14,12 +14,12 @@ export const SearchSection = styled(Search)`
 
   background: #ffffff;
   border-radius: 4px;
-`;
-export const FlexButton = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
 
-  margin-left: 24px;
+  ${mobile({
+    width: 0,
+    left: "20px",
+    top: "220px",
+  })}
 `;
 
 export const Select = styled.select`
@@ -38,8 +38,8 @@ export const Select = styled.select`
     position: "absolute",
     width: "335px",
     height: "44px",
-    left: "20px",
-    top: "204px",
+    left: "0px",
+    top: "0px",
 
     background: "#FFFFFF",
     border: "1px solid #DBDFE1",
@@ -56,17 +56,63 @@ export const Input = styled.input`
   height: 44px;
   left: 276px;
   top: 12px;
+
+  ${mobile({
+    boxSizing: "border-box",
+
+    position: "absolute",
+    width: "335px",
+    height: "44px",
+    left: "1px",
+    top: "50px",
+
+    background: "#FFFFFF",
+    border: "1px solid #DBDFE1",
+    borderRadius: "4px",
+  })}
 `;
 
 export const Button = styled.button`
   position: absolute;
   width: 139px;
   height: 44px;
-  left: 803px;
+  left: 570px;
   top: 12px;
   border: none;
   color: white;
   text-transform: uppercase;
+  border-radius: 4px;
 
   background: var(--orange-fs);
+
+  ${mobile({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "14px 131px",
+    gap: "10px",
+
+    position: "absolute",
+    width: "335px",
+    height: "44px",
+    left: "1px",
+    top: "100px",
+
+    /* Orange */
+
+    background: "#E87722",
+    borderRadius: "4px",
+  })}
+`;
+
+export const FlexIcon = styled.div`
+  position: absolute;
+  top: 18px;
+  left: 900px;
+
+  ${mobile({
+    width: "200px",
+    left: "130px",
+    top: "160px",
+  })}
 `;

@@ -31,8 +31,8 @@ export const options = {
         usePointStyle: true,
         pointStyle: "rect",
       },
-      position: "top",
-      align: "end",
+      position: window.innerWidth > 380 ? "top" : "bottom",
+      align: window.innerWidth > 380 ? "end" : "center",
     },
 
     maintainAspectRatio: false,

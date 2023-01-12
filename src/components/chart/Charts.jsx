@@ -33,27 +33,7 @@ ChartJS.register(
 
 export default function Charts({ className }) {
   const [state, setState] = useState(data);
-  const [res, setRes] = useState(options);
-  const [width, setWidth] = useState(window.innerWidth);
-  console.log(width);
-  useEffect(() => {
-    width <= 380
-      ? setRes({
-          plugins: {
-            legend: {
-              labels: {
-                usePointStyle: true,
-                pointStyle: "rect",
-              },
-              position: "bottom",
-            },
 
-            maintainAspectRatio: false,
-          },
-        })
-      : setRes(options);
-  }, [width]);
-  console.log(state);
   const random = () => {
     state.datasets.forEach((dataset) => {
       dataset.data = numbers({
@@ -104,7 +84,7 @@ export default function Charts({ className }) {
       <div className={className}>
         <Line
           data={state}
-          options={res}
+          options={options}
           width={800}
           height={300}
           redraw={true}

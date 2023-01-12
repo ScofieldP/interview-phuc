@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Charts from "../components/chart/Charts";
 import { mobile } from "./responsive";
-import "./style.css";
 
 export const Container = styled.div`
   position: relative;

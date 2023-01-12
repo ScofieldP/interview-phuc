@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Search from "../components/search/Search";
 import { mobile } from "./responsive";
-import "./style.css";
 
 export const SearchSection = styled(Search)`
   /* Rectangle 351 */

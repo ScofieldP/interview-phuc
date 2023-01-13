@@ -88,8 +88,9 @@ export default function Charts({ className }) {
     <>
       <ChartContainer>
         <LineContainer>
-          <Line data={state} options={options} width={1500} height={700} />
+          <Line data={state} options={options} />
         </LineContainer>
+
         <ButtonContainer>
           <ChartButton onClick={random}>Randomize</ChartButton>
           <ChartButton onClick={addDataset}>Add Dataset</ChartButton>

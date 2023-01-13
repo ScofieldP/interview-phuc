@@ -27,9 +27,6 @@ export const Title = styled.p`
   ${mobile({
     fontSize: "20px",
     marginBottom: "15px",
-
-    /* Orange */
-
     color: "var(--orange-fs)",
   })}
 `;
@@ -58,23 +55,12 @@ export const SubTitle = styled.p`
   })}
 `;
 
-export const LineContainer = styled.div`
-  position: relative;
-  margin: auto;
-  height: 60vh;
-  width: 80vw;
-
-  ${mobile({
-    width: "80vw",
-    height: "250px",
-  })}
-`;
-
 export const ChartAll = styled.div`
   min-width: 400px;
   min-height: 530px;
   background-color: #dbdfe1;
   border-radius: 4px;
+  margin-top: 30px;
   padding: 40px 40px 35px 40px;
   ${mobile({
     minWidth: "400px",
@@ -84,11 +70,23 @@ export const ChartAll = styled.div`
 `;
 export const ChartContainer = styled.div`
   width: 100%;
-  background-color: #fff;
+  background-color: white;
   margin-top: 10px;
-  padding: 18px 20px 20px 31px;
+  padding: 19px 20px 20px 31px;
   ${mobile({
     padding: 0,
+  })}
+`;
+
+export const LineContainer = styled.div`
+  position: relative;
+  height: 60vh;
+  width: 60vw;
+  left: 20px;
+  ${mobile({
+    left: "10px",
+    width: "100vw",
+    height: "250px",
   })}
 `;
 
@@ -110,6 +108,13 @@ export const ChartContainer = styled.div`
 //     left: "0",
 //   })}
 // `;
+export const ButtonContainer = styled.div`
+  text-align: center;
+  margin-top: 10px;
+  ${mobile({
+    margin: 0,
+  })}
+`;
 
 export const ChartButton = styled.a`
   margin: 16px 0;
@@ -143,9 +148,4 @@ export const ChartButton = styled.a`
     border-color: rgba(48, 128, 208, 0.4);
     color: #3080d0;
   }
-`;
-
-export const ButtonContainer = styled.div`
-  margin-top: 50px;
-  text-align: center;
 `;

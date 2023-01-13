@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Search from "../components/search/Search";
 import { mobile } from "./responsive";
+import { Form, DatePicker } from "antd";
 
 export const SearchContainer = styled.div`
   display: flex;
@@ -11,17 +12,20 @@ export const SearchContainer = styled.div`
   border-radius: 4px;
   ${mobile({
     flexDirection: "column",
+    // marginTop: "40px",
   })}
 `;
 
 export const SelectContainer = styled.div`
-  display: inline-block;
-  position: relative;
-
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
   ${mobile({
+    display: "inline-block",
+
     width: "100%",
     marginBottom: "14px",
-  })}
+  })};
 `;
 // export const SearchSection = styled(Search)`
 //   /* Rectangle 351 */
@@ -47,43 +51,61 @@ export const Select = styled.select`
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
-  padding: 10px 110px 10px 20px;
+  width: 275px;
+  height: 44px;
   border: 1px solid #dbdfe1;
   border-radius: 4px;
   cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 
   ${mobile({
     width: "100%",
   })}
 `;
 
-export const Input = styled.input`
-  color: var(--orange-fs);
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-  padding: 10px 110px 10px 20px;
-  border: 1px solid #dbdfe1;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 30px;
+// export const Input1 = styled.input`
+//   color: var(--orange-fs);
+//   font-weight: bold;
+//   font-size: 16px;
+//   line-height: 24px;
+//   width: 275px;
+//   height: 44px;
+//   border: 1px solid #dbdfe1;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   margin-left: 30px;
+//   ${mobile({
+//     width: "100%",
+//     marginTop: "20px",
+//     marginLeft: 0,
+//   })};
+// `;
+
+export const StyleForm = styled(Form)`
   ${mobile({
-    boxSizing: "border-box",
-
-    position: "absolute",
-    width: "335px",
-    height: "44px",
-    left: "1px",
-    top: "50px",
-
-    background: "#FFFFFF",
-    border: "1px solid #DBDFE1",
-    borderRadius: "4px",
+    width: "275px",
+    marginTop: "20px",
+    marginLeft: 0,
   })};
 `;
 
+export const StyledDate = styled(DatePicker.RangePicker)`
+  color: var(--orange-fs);
+  width: "100%";
+  @media (min-width: 768px) {
+    width: 280px!important;
+    .ant-picker-header {
+      position: relative;
+      .ant-picker-header-prev-btn, .ant-picker-header-view {
+        visibility: initial;
+      }
+    }
+
+    .ant-picker-body {
+      display: block;
+    }
+  }
+}
+`;
 export const Button = styled.button`
   color: #ffffff;
   line-height: 24px;
@@ -98,22 +120,9 @@ export const Button = styled.button`
   text-transform: uppercase;
 
   ${mobile({
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "14px 131px",
-    gap: "10px",
-
-    position: "absolute",
-    width: "335px",
-    height: "44px",
-    left: "1px",
-    top: "100px",
-
-    /* Orange */
-
-    background: "#E87722",
-    borderRadius: "4px",
+    width: "100%",
+    marginLeft: "0",
+    marginTop: "20px",
   })}
 `;
 
@@ -121,7 +130,6 @@ export const FlexIcon = styled.div`
   display: inline-flex;
   align-items: center;
   ${mobile({
-    width: "200px",
     left: "130px",
     top: "160px",
   })}

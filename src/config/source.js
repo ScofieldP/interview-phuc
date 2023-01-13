@@ -23,7 +23,7 @@ export const data = {
 };
 
 export const options = {
-  responsive: true,
+  // responsive: true,
   data: data,
   plugins: {
     legend: {
@@ -31,8 +31,8 @@ export const options = {
         usePointStyle: true,
         pointStyle: "rect",
       },
-      position: window.innerWidth > 380 ? "top" : "bottom",
-      align: window.innerWidth > 380 ? "end" : "center",
+      position: window.innerWidth > 470 ? "top" : "bottom",
+      align: window.innerWidth > 470 ? "end" : "center",
     },
 
     maintainAspectRatio: false,

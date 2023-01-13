@@ -91,19 +91,7 @@ export const StyleForm = styled(Form)`
 export const StyledDate = styled(DatePicker.RangePicker)`
   color: var(--orange-fs);
   width: "100%";
-  @media (min-width: 768px) {
-    width: 280px!important;
-    .ant-picker-header {
-      position: relative;
-      .ant-picker-header-prev-btn, .ant-picker-header-view {
-        visibility: initial;
-      }
-    }
-
-    .ant-picker-body {
-      display: block;
-    }
-  }
+ 
 }
 `;
 export const Button = styled.button`

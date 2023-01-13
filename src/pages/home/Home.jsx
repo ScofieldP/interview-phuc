@@ -1,12 +1,15 @@
+import { Chart } from "chart.js";
 import React from "react";
+import Search from "../../components/search/Search";
 import {
   Container,
   Title,
   SubTitle,
-  ChartContainer,
+  ChartAll,
   ChartSection,
 } from "../../style/Chart.styled";
 import { SearchSection } from "../../style/Search.styled";
+import Charts from "./../../components/chart/Charts";
 export default function Home() {
   return (
     <Container>
@@ -16,9 +19,11 @@ export default function Home() {
         và quá khứ, bạn có thể tùy chọn thời điểm tra cứu theo khung thời gian
         bạn muốn
       </SubTitle>
-      <ChartContainer />
-      <SearchSection />
-      <ChartSection />
+
+      <ChartAll>
+        <Search />
+        <Charts />
+      </ChartAll>
     </Container>
   );
 }

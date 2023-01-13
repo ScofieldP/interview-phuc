@@ -2,60 +2,73 @@ import styled from "styled-components";
 import Search from "../components/search/Search";
 import { mobile } from "./responsive";
 
-export const SearchSection = styled(Search)`
-  /* Rectangle 351 */
-
-  position: absolute;
-  width: 1000px;
-  height: 68px;
-  left: 240px;
-  top: 243px;
-
-  background: #ffffff;
+export const SearchContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background-color: #ffffff;
   border-radius: 4px;
-
   ${mobile({
-    width: 0,
-    left: "20px",
-    top: "220px",
+    flexDirection: "column",
   })}
 `;
 
-export const Select = styled.select`
-  box-sizing: border-box;
-  position: absolute;
-  width: 236px;
-  height: 44px;
-  top: 12px;
-  left: 24px;
-  color: var(--orange-fs);
-  font-weight: bold;
+export const SelectContainer = styled.div`
+  display: inline-block;
+  position: relative;
 
   ${mobile({
-    boxSizing: "border-box",
+    width: "100%",
+    marginBottom: "14px",
+  })}
+`;
+// export const SearchSection = styled(Search)`
+//   /* Rectangle 351 */
 
-    position: "absolute",
-    width: "335px",
-    height: "44px",
-    left: "0px",
-    top: "0px",
+//   position: absolute;
+//   width: 1000px;
+//   height: 68px;
+//   left: 249px;
+//   top: 243px;
 
-    background: "#FFFFFF",
-    border: "1px solid #DBDFE1",
-    borderRadius: "4px",
+//   background: #ffffff;
+//   border-radius: 4px;
+
+//   ${mobile({
+//     width: 0,
+//     left: "20px",
+//     top: "220px",
+//   })}
+// `;
+
+export const Select = styled.select`
+  color: var(--orange-fs);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 10px 110px 10px 20px;
+  border: 1px solid #dbdfe1;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  ${mobile({
+    width: "100%",
   })}
 `;
 
 export const Input = styled.input`
-  box-sizing: border-box;
   color: var(--orange-fs);
   font-weight: bold;
-  position: absolute;
-  width: 275px;
-  height: 44px;
-  left: 276px;
-  top: 12px;
-
+  font-size: 16px;
+  line-height: 24px;
+  padding: 10px 110px 10px 20px;
+  border: 1px solid #dbdfe1;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 30px;
   ${mobile({
     boxSizing: "border-box",
 
@@ -68,21 +81,21 @@ export const Input = styled.input`
     background: "#FFFFFF",
     border: "1px solid #DBDFE1",
     borderRadius: "4px",
-  })}
+  })};
 `;
 
 export const Button = styled.button`
-  position: absolute;
-  width: 139px;
-  height: 44px;
-  left: 570px;
-  top: 12px;
+  color: #ffffff;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #e87722;
+  padding: 10px 35px;
   border: none;
-  color: white;
-  text-transform: uppercase;
   border-radius: 4px;
-
-  background: var(--orange-fs);
+  margin-left: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
 
   ${mobile({
     display: "flex",
@@ -105,10 +118,8 @@ export const Button = styled.button`
 `;
 
 export const FlexIcon = styled.div`
-  position: absolute;
-  top: 18px;
-  left: 900px;
-
+  display: inline-flex;
+  align-items: center;
   ${mobile({
     width: "200px",
     left: "130px",

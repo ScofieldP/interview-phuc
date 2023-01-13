@@ -12,7 +12,12 @@ import {
   Tooltip,
   Legend,
 } from "chart.js/auto";
-import { ChartButton, ButtonContainer } from "../../style/Chart.styled";
+import {
+  ChartButton,
+  ButtonContainer,
+  LineContainer,
+  ChartContainer,
+} from "../../style/Chart.styled";
 import {
   numbers,
   namedColor,
@@ -81,14 +86,10 @@ export default function Charts({ className }) {
   };
   return (
     <>
-      <div className={className}>
-        <Line
-          data={state}
-          options={options}
-          width={800}
-          height={300}
-          redraw={true}
-        />
+      <ChartContainer>
+        <LineContainer>
+          <Line data={state} options={options} width={1500} height={700} />
+        </LineContainer>
         <ButtonContainer>
           <ChartButton onClick={random}>Randomize</ChartButton>
           <ChartButton onClick={addDataset}>Add Dataset</ChartButton>
@@ -96,7 +97,7 @@ export default function Charts({ className }) {
           <ChartButton onClick={removeDataset}>Remove Dataset</ChartButton>
           <ChartButton onClick={removeData}>Remove Data</ChartButton>
         </ButtonContainer>
-      </div>
+      </ChartContainer>
     </>
   );
 }

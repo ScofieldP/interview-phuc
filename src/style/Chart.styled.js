@@ -3,50 +3,30 @@ import Charts from "../components/chart/Charts";
 import { mobile } from "./responsive";
 
 export const Container = styled.div`
-  position: relative;
-  width: 1440px;
-  height: 804px;
-  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 77px 0 71px 0;
+
   ${mobile({
     /* Mobile ver */
 
-    position: "relative",
-    width: "0",
-    height: "823px",
-    background: "white",
+    padding: "63px 20px",
   })}
 `;
 
 export const Title = styled.p`
-  position: absolute;
-  width: 280px;
-  height: 30px;
-  left: 589px;
-  top: 50px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 26px;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
   text-align: center;
+  font-weight: 400;
+  color: #e87722;
+  font-size: 26px;
+  margin-bottom: 18px;
   text-transform: uppercase;
   color: var(--orange-fs);
 
   ${mobile({
-    position: "absolute",
-    width: "210px",
-    height: "28px",
-    left: "85px",
-    top: "63px",
-    fontStyle: "normal",
-    fontWeight: "400",
     fontSize: "20px",
-    lineHeight: "28px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    textTransform: "uppercase",
+    marginBottom: "15px",
 
     /* Orange */
 
@@ -54,11 +34,8 @@ export const Title = styled.p`
   })}
 `;
 export const SubTitle = styled.p`
-  position: absolute;
   width: 819px;
   height: 48px;
-  left: 311px;
-  top: 100px;
 
   font-style: normal;
   font-weight: 400;
@@ -72,62 +49,67 @@ export const SubTitle = styled.p`
   color: #0a3b32;
 
   ${mobile({
-    position: "absolute",
     width: "335px",
-    height: "74px ",
-    left: "20px",
-    top: "106px",
-
-    fontStyle: "normal",
-    fontWeight: "400",
+    height: "74px",
     fontSize: "16px",
     lineHeight: "24px",
-
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-
-    color: "#0A3B32",
+    // overflow: "hidden",
+    textOverflow: "ellipsis",
   })}
 `;
 
+export const LineContainer = styled.div`
+  position: relative;
+  margin: auto;
+  height: 60vh;
+  width: 80vw;
+
+  ${mobile({
+    width: "80vw",
+    height: "250px",
+  })}
+`;
+
+export const ChartAll = styled.div`
+  min-width: 400px;
+  min-height: 530px;
+  background-color: #dbdfe1;
+  border-radius: 4px;
+  padding: 40px 40px 35px 40px;
+  ${mobile({
+    minWidth: "400px",
+    backgroundColor: "#fff",
+    padding: "0",
+  })}
+`;
 export const ChartContainer = styled.div`
-  box-sizing: border-box;
-  position: absolute;
-  width: 1080px;
-  height: 530px;
-  left: 200px;
-  top: 203px;
-  background: #dbdfe1;
-  border: 1px solid #dbdfe1;
-  border-radius: 4px;
-
+  width: 100%;
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 18px 20px 20px 31px;
   ${mobile({
-    background: "none",
-    border: "none",
-    width: "0",
-    height: "0",
+    padding: 0,
   })}
 `;
 
-export const ChartSection = styled(Charts)`
-  box-sizing: border-box;
-  position: absolute;
-  width: 1000px;
-  height: 367px;
-  left: 240px;
-  top: 331px;
-  background: #ffffff;
-  border-radius: 4px;
+// export const ChartSection = styled(Charts)`
+//   box-sizing: border-box;
+//   position: absolute;
+//   width: 1000px;
+//   height: 367px;
+//   left: 249px;
+//   top: 331px;
+//   background: #ffffff;
+//   border-radius: 4px;
 
-  ${mobile({
-    position: "relative",
-    top: "420px",
-    height: "2  00vh",
-    width: "100vw",
-    left: "0",
-  })}
-`;
+//   ${mobile({
+//     position: "relative",
+//     top: "420px",
+//     height: "2  00vh",
+//     width: "100vw",
+//     left: "0",
+//   })}
+// `;
 
 export const ChartButton = styled.a`
   margin: 16px 0;

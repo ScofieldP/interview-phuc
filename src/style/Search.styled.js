@@ -91,7 +91,7 @@ export const StyleForm = styled(Form)`
 export const StyledDate = styled(DatePicker.RangePicker)`
   color: var(--orange-fs);
   width: "100%";
- 
+  
 }
 `;
 export const Button = styled.button`
